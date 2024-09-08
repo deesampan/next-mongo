@@ -8,7 +8,7 @@ export default function Home() {
   const { register, handleSubmit } = useForm();
 
   async function fetchCategory() {
-    const data = await fetch("http://localhost:3000/api/category");
+    const data = await fetch("https://next-mongo-zeta-one.vercel.app/category");
     const c = await data.json();
     setCategoryList(c);
   }
@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   function createCategory(data) {
-    fetch("http://localhost:3000/api/category", {
+    fetch("https://next-mongo-zeta-one.vercel.app/category", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
